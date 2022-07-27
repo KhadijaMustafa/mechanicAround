@@ -35,8 +35,10 @@ class TextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-       padding: EdgeInsets.only(left: 20, right: 10),
-      margin: EdgeInsets.only(left: 20, top: 25, right: 20),
+      alignment: Alignment.center,
+        padding: EdgeInsets.only(left: 20, right: 10),
+      // margin: EdgeInsets.only(left: 20, top: 25, right: 20),
+      width: width,
       height: 50,
       decoration: BoxDecoration(
           borderRadius: borderradius,

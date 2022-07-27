@@ -9,21 +9,25 @@ class ButtonWidget extends StatelessWidget {
   final Color? bgcolor;
   final BoxBorder? border;
   final BorderRadius? borderradius;
-  const ButtonWidget({Key? key,this.size,this.text,this.fontWeight,this.textcolor,this.bgcolor,this.border,this.borderradius,this.height,this.width}) : super(key: key);
+  final Function? onTab;
+  const ButtonWidget({Key? key,this.size,this.text,this.fontWeight,this.textcolor,this.bgcolor,this.border,this.borderradius,this.height,this.width,this.onTab}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: bgcolor,
-        border: border,
-        borderRadius: borderradius,
-        
+    return InkWell(
+onTap: () => onTab!(),
+      child: Container(
+        alignment: Alignment.center,
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          color: bgcolor,
+          border: border,
+          borderRadius: borderradius,
+          
+        ),
+        child: Text('$text',style: TextStyle(color: textcolor,fontSize: size,fontWeight: fontWeight),),
       ),
-      child: Text('$text',style: TextStyle(color: textcolor,fontSize: size,fontWeight: fontWeight),),
     );
   }
 }
